@@ -1,0 +1,93 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class person
+{
+protected:
+    int id;
+    char name[21];
+public:
+    //constructor
+    person()
+    {
+        id = 0;
+        strcpy(name , " ");
+    }
+
+    person(int i)
+    {
+        id = i;
+        strcpy(name , " ");
+    }
+    person(int i, char name[21])
+    {
+        this ->id = i;
+        strcpy(this ->name , " ");
+    }
+    //setters
+
+    void set_id(int n)
+    {
+        id = n;
+    }
+
+    void set_name(char name[21])
+    {
+        strcpy(this -> name, name);
+    }
+    //getters
+    int get_id()
+    {
+        return id;
+    }
+
+    char* get_name()
+    {
+        return name;
+    }
+
+
+};
+
+
+
+class employee:public person
+{
+    int salary;
+
+public:
+    //constructor
+    employee()
+    {
+        salary = 0;
+    }
+    employee(int i, char* name[], int s):person( i,  name[])
+    {
+        salary = s;
+
+
+    }
+
+};
+
+
+class customer:public person
+{
+    long number;
+
+
+public:
+
+
+};
+
+
+
+
+
+int main()
+{
+
+    return 0;
+}
